@@ -86,7 +86,12 @@ def main():
     st.set_page_config(page_title="네이버 API 검색", layout="wide") # layout의 형태를 wide 로 설정정
     
     # 제목 및 설명
-    st.title("노동자로 살건인가? 자본가로 살것인가? 네이버 검색 API")
+    st.markdown("""
+    <div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;">
+        <span style="color: #03c75a; font-size: 40px; font-weight: bold;">Naver 검색 </span>
+        <span style="color: #000000; font-size: 35px; font-weight: bold;">  : 뉴스, 블로그, 이미지 쇼핑</span>
+    </div>
+    """, unsafe_allow_html=True)
     st.markdown("---")
     
     # API 키 입력 (기본값 설정, 실제 앱에서는 숨기는 것이 좋음)
@@ -109,14 +114,14 @@ def main():
         )
         search_type = search_type[1]  # news, blog, image, shop 중 하나를 선택하여 실제값 추출
         
-        query = st.text_input("검색어:", value="안성탕면")
+        query = st.text_input("검색어:", value="불닭볶음면")
         count = st.slider("결과 수:", min_value=1, max_value=100, value=50)
     
     with col2: # 두번째 열의 검색 옵션을 설정
         sort_options = st.selectbox(
             "정렬:", 
             options=[("최신순", "date"), ("정확도순", "sim")],
-            format_func=lambda x: x[0] # 옵션의 첫번째 요소를 화면에 표시(최신순, 정확도순)
+            format_func=lambda x: x[1] # 옵션의 첫번째 요소를 화면에 표시(최신순, 정확도순)
         )
         sort_options = sort_options[1]  # date, sim 중 하나를 선택하여 sort_options 에 할당
         
@@ -223,4 +228,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
