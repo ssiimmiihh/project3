@@ -95,7 +95,10 @@ def main():
     st.markdown("---")
     
     # API 키 입력 (기본값 설정, 실제 앱에서는 숨기는 것이 좋음)
-    with st.sidebar: # 사이드바 화면 개발 
+    with st.sidebar: # 사이드바 화면 개발
+        st.markdown("##") 
+        st.markdown("##") 
+        st.markdown("##") 
         st.header("네이버 검색 API 설정")
         client_id = st.text_input("Client ID", value="8M7qNQSzjXj7bSOkm3Ig")
         client_secret = st.text_input("Client Secret", value="QU3VU_3J6Y", type="password")
