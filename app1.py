@@ -89,7 +89,7 @@ def main():
     st.markdown("""
     <div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center;">
         <span style="color: #03c75a; font-size: 40px; font-weight: bold;">Naver 검색 </span>
-        <span style="color: #000000; font-size: 35px; font-weight: bold;">  : 뉴스, 블로그, 이미지 쇼핑</span>
+        <span style="color: #000000; font-size: 35px; font-weight: bold;">  : 뉴스, 블로그, 이미지, 쇼핑</span>
     </div>
     """, unsafe_allow_html=True)
     st.markdown("---")
